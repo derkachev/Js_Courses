@@ -1,0 +1,36 @@
+'use strict';
+
+let menu = document.querySelectorAll('.menu')[0], // вызываем класс в котором находится меню, не забываем о []
+
+    menuItem = document.querySelectorAll('.menu-item'), // вызываем елементы массива (приходит коллекция) 
+
+    title = document.querySelectorAll('.title')[0],
+
+    adv = document.getElementsByClassName('adv')[0],
+
+    column = document.getElementsByClassName('column')[1],
+
+    promptClass = document.querySelectorAll('#prompt')[0];
+   
+        let ask = prompt('Как относитесь к технике apple?', '');
+        
+    
+    let five = document.createElement('li'); // создаем новый элемент меню
+    five.classList.add('menu-item'); // добавляем к нему класс, который содержат другие елементы
+    five.textContent = 'Пятый пункт'; // наполняем елемент текстом 
+    menu.appendChild(five); // добавляем его в конец menu  
+    menu.replaceChild(menuItem[1], menuItem[2]); // меняем местами пункты 2 и 3
+    menu.insertBefore(menuItem[2], menuItem[1]); // добавляем обратно третий после первого
+
+    document.body.style.backgroundImage = 'url(img/apple_true.jpg)'; // меняем backgroundImage у body, обращение к фото не из js файла а с html, учитывай при адресе
+
+    title.textContent = 'Мы продаем только подлинную технику Apple?';
+
+    adv.remove();
+
+    let opinion = document.createElement('em');
+    opinion.textContent = ask;
+    promptClass.appendChild(opinion);
+
+    
+     
